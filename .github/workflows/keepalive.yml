@@ -2,12 +2,12 @@ name: Keep Render API Alive
 
 on:
   schedule:
-    - cron: "*/10 * * * *"  # Runs every 10 minutes
+    - cron: "*/4 * * * *"  # Runs every 10 minutes
   workflow_dispatch:        # Allows manual run from GitHub UI
 
 jobs:
   ping-api:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  
     steps:
       - name: Curl your Render API
         run: |
