@@ -2,8 +2,8 @@ name: Keep Render API Alive
 
 on:
   schedule:
-    - cron: "*/4 * * * *"  # Runs every 10 minutes
-  workflow_dispatch:        # Allows manual run from GitHub UI
+    - cron: "*/4 * * * *"  # ✅ Every 4 minutes
+  workflow_dispatch:        # ✅ Allows manual run
 
 jobs:
   ping-api:
@@ -11,5 +11,5 @@ jobs:
     steps:
       - name: Curl your Render API
         run: |
-          curl -s https://catlog-builder-api.onrender.com//api/Category || echo "Ping failed"
+          curl -s https://catlog-builder-api.onrender.com/api/Category || echo "Ping failed"
           curl -s https://lipzeee-catalog-v01-backend.onrender.com/api/Category || echo "Ping failed"
